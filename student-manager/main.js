@@ -36,9 +36,9 @@ function updateAverage() {
   }
   let average = total / students.length;
 
-  document.getElementById("averageDisplay").textContent = `Average Grade: ${average.toFixed(2)}`;
+  document.getElementById(
+    "averageDisplay"
+  ).textContent = `Average Grade: ${average.toFixed(2)}`;
 }
 
-function saveToLocalStorage() {
-
-}
+function saveToLocalStorage() {}
