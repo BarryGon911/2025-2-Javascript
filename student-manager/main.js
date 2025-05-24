@@ -29,9 +29,7 @@ function displayStudents() {
 
   for (let i = 0; i < students.length; i++) {
     const li = document.createElement("li");
-    li.innerHTML = `
-      <p>${students[i].name} - ${students[i].grade} </p>
-    `;
+    li.innerHTML = `<p>${students[i].name} - ${students[i].grade} </p>`;
     list.appendChild(li);
   }
 }
