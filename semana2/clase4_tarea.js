@@ -13,6 +13,10 @@
 //
 //La calificación más alta y la más baja
 
+
+
+const { ask } = require('../helpers/input');
+
 function obtenerPromedio(numeros) {
   let total = 0;
   for (let i = 0; i < numeros.length; i++) {
@@ -42,6 +46,14 @@ function obtenerMenor(numeros) {
   }
   return menor;
 }
+function analizarCalificaciones(calificaciones){
+    let aprobados = 0;
+    let reprobados = 0;
+    let promedio = 0;
+    let califAlta = 0;
+    let califBaja= 0;
+}
+
 
 function obtenerAprobados(numeros) {
   let aprobados = 0;

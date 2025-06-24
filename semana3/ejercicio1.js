@@ -22,14 +22,11 @@ async function main() {
     }
   ];
 
-  // personas[0].saludar();
-  // personas[1].saludar();
-
   for (let i = 0; i < personas.length; i++) {
     personas[i].saludar();
   }
 
-  const alumno = {
+  const alumno1 = {
     nombre: "Yei Yei",
     edad: 18,
     ocupacion: "Estudiante",

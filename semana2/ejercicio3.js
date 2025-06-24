@@ -30,3 +30,22 @@ async function main() {
   console.log("Al revés", resultado);
 }
 main();
+
+
+//imprimir los que empiezan con vocal en un nuevo arreglo
+
+async function main() {
+  const nombres = ["Ana", "Esteban", "Luis", "Oscar", "Maria"];
+  const vocales = ["a", "e", "i", "o", "u"];
+  const resultado = [];
+
+  for (let index1 = 0; index1 < nombres.length; index1++) {
+    let primerLetra = nombres[index1][0].toLowerCase();
+    for (let index2 = 0; index2 < vocales.length; index2++) {
+      if (primerLetra === vocales[index2]) {
+        console.log(`Los nombres que empiezan con vocal son: `, resultado);
+      }
+    }
+  }
+}
+main();

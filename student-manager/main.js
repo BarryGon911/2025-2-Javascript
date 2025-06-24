@@ -13,9 +13,22 @@ window.onload = function () {
 
 function addStudent() {
   const name = document.getElementById("nameInput").value.trim();
+  if (name === "" || name === isNaN) {
+    alert("Debes de capturar un nombre válido");
+    return;
+  }
   const grade = parseFloat(document.getElementById("gradeInput").value);
+  if (grade > 100 || grade < 0) {
+    alert("Debes de capturar una calificación válida");
+    return;
+  }
 
-  const student = { name, grade };
+  const student = {
+    name,
+    grade,
+    status: grade >= 70 ? "Passed" : "Failed",
+  };
+
   students.push(student);
 
   saveToLocalStorage();
@@ -29,7 +42,13 @@ function displayStudents() {
 
   for (let i = 0; i < students.length; i++) {
     const li = document.createElement("li");
+<<<<<<< HEAD
     li.innerHTML = `<p>${students[i].name} - ${students[i].grade} </p>`;
+=======
+    li.innerHTML = `
+      <p>${students[i].name} - ${students[i].grade} - ${students[i].status} </p>
+    `;
+>>>>>>> adca713c518b2961461158fc147c57ea3763d4d9
     list.appendChild(li);
   }
 }
