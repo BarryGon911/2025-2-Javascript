@@ -2,6 +2,15 @@
 
 let students = [];
 
+window.onload = function () {
+  const stored = localStorage.getItem("students");
+  if (stored) {
+    students = JSON.parse(stored);
+    displayStudents();
+    updateAverage();
+  }
+}
+
 function addStudent() {
   const name = document.getElementById("nameInput").value.trim();
   const grade = parseFloat(document.getElementById("gradeInput").value);
@@ -9,6 +18,7 @@ function addStudent() {
   const student = { name, grade };
   students.push(student);
 
+  saveToLocalStorage();
   displayStudents();
   updateAverage();
 }
@@ -19,9 +29,7 @@ function displayStudents() {
 
   for (let i = 0; i < students.length; i++) {
     const li = document.createElement("li");
-    li.innerHTML = `
-      <p>${students[i].name} - ${students[i].grade} </p>
-    `;
+    li.innerHTML = `<p>${students[i].name} - ${students[i].grade} </p>`;
     list.appendChild(li);
   }
 }
@@ -41,4 +49,10 @@ function updateAverage() {
   ).textContent = `Average Grade: ${average.toFixed(2)}`;
 }
 
+<<<<<<< HEAD
 function saveToLocalStorage() {}
+=======
+function saveToLocalStorage() {
+  localStorage.setItem("students", JSON.stringify(students));
+}
+>>>>>>> de398734776aec6749a4bc1fb278cd2a961069f1
